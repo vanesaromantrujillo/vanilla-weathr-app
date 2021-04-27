@@ -25,6 +25,12 @@ li {
   text-transform: capitalize;
   vertical-align: baseline;
 }
+#predition li {
+  margin-right: 0px;
+  padding-right: 0px;
+  display: block;
+  text-align: right;
+}
 .weather-app {
   padding: 20px;
   border: 1px solid #dadde1;
@@ -50,18 +56,24 @@ li {
   margin-left: 0px;
   vertical-align: top;
 }
-.units {
+.weather-temperature .units {
+  color: #202124;
   line-height: 24px;
   vertical-align: top;
   font-size: 16px;
-  margin-top: 6px;
+  top: -30px;
 }
-#predition li {
-  margin-right: 0px;
-  padding-right: 0px;
-  display: block;
-  text-align: right;
+.units a {
+  text-decoration: none;
 }
 .no-cap {
   text-transform: lowercase;
+}
+
+.units .active {
+  color: #202124;
+  cursor: default;
+}
+.units .active:hover {
+  cursor: default;
 }
