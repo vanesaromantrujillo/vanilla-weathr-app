@@ -35,6 +35,9 @@ a {
   display: block;
   text-align: right;
 }
+#icon {
+  filter: drop-shadow(5px 5px 5px rgb(153, 176, 252));
+}
 .weather-app {
   padding: 20px;
   border: 1px solid #000000;
