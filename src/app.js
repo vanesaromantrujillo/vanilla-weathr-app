@@ -39,9 +39,16 @@ function displayTemperature(response){
     "src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt",response.data.weather[0].description );
 }
+function search(city){
+    let apiKey="445aeda78e9f65ae9c133e75be3fe412";
+    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayTemperature);
+}
+function handleSubmit(event){
+    event.preventDefault();
+    let cityInputElement=document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
 
-let apiKey="445aeda78e9f65ae9c133e75be3fe412";
-let city="Miami";
-let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-axios.get(apiUrl).then(displayTemperature);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit",handleSubmit);
