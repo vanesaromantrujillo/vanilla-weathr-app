@@ -74,3 +74,8 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink=document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+
+// 1 Add html and CSS for forescast 
+// 2 Add API call to get forescast 
+// 3 Replace the dyummy content with real data
