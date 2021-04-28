@@ -99,3 +99,9 @@ a {
 .weather-forescast-temperature-min {
   color: #bababa;
 }
+.forecast-col {
+  background-color: #f8f9fa;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+}

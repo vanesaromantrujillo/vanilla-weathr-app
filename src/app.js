@@ -12,7 +12,33 @@ function formatDate(timestamp){
     let day =days[date.getDay()];
     return `${day}, ${hours}:${minutes}`;
 }
+function displayForecast(){
+    let forecastElement=document.querySelector("#forecast");
 
+    let forecastHTML=`<div class="row">`;
+    let daysForecast=["Sun.","Mon.","Tue.","Wen.","Thu.", "Fri.", "Sat."];
+    daysForecast.forEach(function(day){
+    forecastHTML=forecastHTML + `
+            <div class="col-2 forecast-col">
+                <div class="weather-forescast-date">${day}</div> 
+                    <img src="http://openweathermap.org/img/wn/50d@2x.png" 
+                    alt="" 
+                    id=""
+                    class="weather-forescast-img"
+                    width="50"/>
+                    <div class="weather-forescast-temperature">
+                    <span class="weather-forescast-temperature-max">15˚</span>
+                    <span class="weather-forescast-temperature-min">10˚</span>
+                </div> 
+            </div>
+    `;
+    })
+
+    forecastHTML=forecastHTML +`</div>`;
+    forecastElement.innerHTML=forecastHTML;
+    console.log(forecastHTML);
+
+}
 function displayTemperature(response){
     let temperatureElement=document.querySelector("#temperature");
     let locationElement=document.querySelector("#city");
@@ -65,6 +91,7 @@ function displayCelsiusTemperature(event){
 
 let celciusTemperature = null;
 search ("Toronto");
+displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit",handleSubmit);
