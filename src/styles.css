@@ -103,5 +103,8 @@ a {
   background-color: #f8f9fa;
   padding-top: 5px;
   padding-bottom: 5px;
-  border-radius: 10px;
+}
+#foot {
+  font-size: small;
+  line-height: 3rem;
 }
