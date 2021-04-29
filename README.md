@@ -1,2 +1,2 @@
-# vanilla-weathr-app-0
+# vanilla-weather-app
  
