@@ -10,7 +10,7 @@ function formatDate(timestamp){
     }
     let days = ["Sunday","Monday", "Tuesday", "Wenesday", "Thursday", "Friday", "Saturday" ];
     let day =days[date.getDay()];
-    return `${day}, ${hours}:${minutes}`;
+    return `${day},${hours}:${minutes}`;
 }
 
 function dayPrediction(timestamp){
@@ -20,7 +20,7 @@ function dayPrediction(timestamp){
     return days[day];
 }
 function displayForecast(response){
-    console.log(response.data.daily);
+    console.log(response.data);
     let forecast = response.data.daily;
     let forecastElement=document.querySelector("#forecast");
 
@@ -47,7 +47,6 @@ function displayForecast(response){
     forecastElement.innerHTML=forecastHTML;
 }
 function getForecast(coordinates){
-    console.log(coordinates);
     let apiKey= "445aeda78e9f65ae9c133e75be3fe412";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
     console.log(apiUrl);
@@ -72,7 +71,6 @@ function displayTemperature(response){
     dateElement.innerHTML=formatDate(response.data.dt * 1000);
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt",response.data.weather[0].description );
-
     getForecast(response.data.coord);
 }
 function search(city){
@@ -93,7 +91,6 @@ function displayFahrenheitTemperature(event){
     //remove the active calls to the celsius link
     celsiusLink.classList.remove("active");
     fahrenheitLink.classList.add("active");
-
     temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
 }
 function displayCelsiusTemperature(event){
@@ -105,7 +102,6 @@ function displayCelsiusTemperature(event){
     temperatureElement.innerHTML=Math.round(celciusTemperature);
 }
 
-let celciusTemperature = null;
 search ("Toronto");
 
 let form = document.querySelector("#search-form");
@@ -116,8 +112,3 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink=document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
-
-// 1 Add html and CSS for forescast 
-// 2 Add API call to get forescast 
-// 3 Replace the dyummy content with real data
