@@ -7,15 +7,15 @@ body {
 ul {
   margin: 0;
   padding: 0;
+  color: #2a2a2ab4;
 }
 li {
   list-style: none;
   margin: 0;
   padding: 0;
-  color: #2a2a2a;
-  font-size: 16px;
+  color: #2a2a2ab4;
   font-weight: 100;
-  line-height: 19px;
+  line-height: 20px;
   text-transform: capitalize;
   vertical-align: baseline;
 }
@@ -64,7 +64,7 @@ hr{
   display: inline;
 }
 .special-color {
-    color: #202124;
+    color: #2a2a2ab4;
 }
 
 .weather-app {
@@ -97,8 +97,6 @@ hr{
   vertical-align: top;
 } 
 
-
-
 .no-cap {
   text-transform: lowercase;
 }
@@ -114,14 +112,14 @@ hr{
   text-align: center;
 }
 .weather-forescast-date {
-  font-size: 16px;
-  color: #0d0d0d;
+  font-size: 1rem;
+  color: #2a2a2ab4;
 }
 .weather-forescast-temperature {
   font-size: 14px;
 }
 .weather-forescast-temperature-min {
-  color: #2a2a2a;
+  color: #2a2a2ab4;
 }
 .weather-forescast-temperature-max {
   color: #0d0d0d;
