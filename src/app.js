@@ -8,9 +8,48 @@ function formatDate(timestamp){
     if (minutes < 10){
         minutes=`0${minutes}`;
     }
+    let ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; 
+
     let days = ["Sunday","Monday", "Tuesday", "Wenesday", "Thursday", "Friday", "Saturday" ];
     let day =days[date.getDay()];
-    return `${day},${hours}:${minutes}`;
+    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
+    let month=months[date.getMonth()];
+    let dateM=date.getDate();
+    return `${day}, ${month} ${dateM}, ${hours}:${minutes}${ampm}`;
+}
+function happyDay(timestamp){
+    let date = new Date(timestamp);
+    let happydays = ["Sunday","Monday", "Tuesday", "Wenesday", "Thursday", "Friday", "Saturday" ];
+    let dayhappy = happydays[date.getDay()];
+    if (dayhappy=="Monday"){
+        return`“Success is the sum of small efforts repeated day in and day out.” 
+        <i>—Robert Collier </i>`;
+    }
+    if (dayhappy=="Tuesday"){
+        return`“Go as far as you can see; when you get there, you’ll be able to see further.” 
+        <i>—Thomas Carlyle</i>`;
+    }
+    if (dayhappy=="Wenesday"){
+        return`“Don’t count the days, make the days count.” 
+        <i>—Muhammad Ali</i>`;
+    }
+    if (dayhappy=="Thursday"){
+        return`“Light tomorrow with today.” 
+        <i>—Elizabeth Barrett Browning </i>`;
+    }
+    if (dayhappy=="Friday"){
+        return`Happy ${dayhappy}, enjoy your weekend 😎`;
+    }
+    
+    if (dayhappy=="Saturday"){
+        return`Happy ${dayhappy}, enjoy your weekend 😎`;
+    }
+
+    else{
+        return `Enjoy your ${dayhappy} 🙂`;
+    }
 }
 
 function dayPrediction(timestamp){
@@ -58,8 +97,10 @@ function displayTemperature(response){
     let descriptionElement= document.querySelector("#description");
     let humidityElement=document.querySelector("#humidity");
     let windElement=document.querySelector("#wind");
+    let feelsElement=document.querySelector("#feels");
     let dateElement=document.querySelector("#date");
     let iconElement=document.querySelector("#icon");
+    let happyElement=document.querySelector("#happy");
 
     celciusTemperature=response.data.main.temp;
 
@@ -68,7 +109,9 @@ function displayTemperature(response){
     descriptionElement.innerHTML=response.data.weather[0].description;
     humidityElement.innerHTML=response.data.main.humidity;
     windElement.innerHTML=Math.round(response.data.wind.speed);
+    feelsElement.innerHTML=Math.round(response.data.main.feels_like);
     dateElement.innerHTML=formatDate(response.data.dt * 1000);
+    happyElement.innerHTML=happyDay(response.data.dt);
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt",response.data.weather[0].description );
     getForecast(response.data.coord);
@@ -83,32 +126,30 @@ function handleSubmit(event){
     let cityInputElement=document.querySelector("#city-input");
     search(cityInputElement.value);
 }
-
-function displayFahrenheitTemperature(event){
-    event.preventDefault();
-    let fahrenheitTemperature=(celciusTemperature * 9)/5+32;
-    let temperatureElement=document.querySelector("#temperature");
-    //remove the active calls to the celsius link
-    celsiusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-    temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
-}
-function displayCelsiusTemperature(event){
-    event.preventDefault();
-    let temperatureElement=document.querySelector("#temperature");
-    //add the active link to the fahrenheit
-    celsiusLink.classList.add("active");
-    fahrenheitLink.classList.remove("active");
-    temperatureElement.innerHTML=Math.round(celciusTemperature);
-}
-
 search ("Toronto");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit",handleSubmit);
 
-let fahrenheitLink=document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-let celsiusLink=document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+
+
+
+//function displayFahrenheitTemperature(event){
+//    event.preventDefault();
+//    let fahrenheitTemperature=(celciusTemperature * 9)/5+32;
+//    let temperatureElement=document.querySelector("#temperature");
+//    //remove the active calls to the celsius link
+//    celsiusLink.classList.remove("active");
+//    fahrenheitLink.classList.add("active");
+//    temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
+//}
+//function displayCelsiusTemperature(event){
+//    event.preventDefault();
+//    let temperatureElement=document.querySelector("#temperature");
+//    //add the active link to the fahrenheit
+//    celsiusLink.classList.add("active");
+//    fahrenheitLink.classList.remove("active");
+//    temperatureElement.innerHTML=Math.round(celciusTemperature);
+//}

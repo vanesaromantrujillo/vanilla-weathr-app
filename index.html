@@ -12,12 +12,13 @@
     <link rel="shortcut icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/rainbow_1f308.png" type="image/x-icon">
 </head>
 <body>
+    
 <div class="container">
     <div class="weather-app-rapper">
         <div class="weather-app">
-            <div class="row">
+            <div class="row form">
                 <div class="col-9">
-            <form id="search-form" class="mb-3">
+                <form id="search-form" class="mb-3">
                 <input 
                 type="search" 
                 placeholder="Type a city..." 
@@ -27,16 +28,16 @@
                 />
                 </div>
                 <div class="col-3">
-                <input type="submit" value="Search" class="btn btn-primary w-100">
+                <input type="submit" value="Search" class="btn btn-primary w-100 search">
                 </div>
-            </form>
-                
+                </form>  
             </div>
             <div class="overview">
                 <h1 id="city"></h1>
-                    <ul>
+                <ul>
                         <li>
-                           <span id="date"></span> 
+                            <span class="special-color" id="date"></span>
+                        </li>
                         <li>
                             <span id="description"></span>
                         </li>
@@ -50,29 +51,35 @@
                             alt="sunny-icon"
                             id="icon"
                             class="float-left weather-units">
-                            <strong id="temperature"></strong> 
-                            <span class="units"><a href="#" id="celsius-link" class="active">˚C</a> |<a href="#" id="fahrenheit-link">˚F</a></span>
+                            <strong id="temperature"></strong><span class="units">°C</span>
+                            
                     </div>
                 </div>
                 <div id="predition" class="col-6">
                     <ul>
-                      
                         <li>
-                            Humidity: <span id="humidity"></span>%
+                            Humidity: <span class="special-color"><span id="humidity"></span>%</span>
                         </li>
                         <li>
-                            Wind Speed: <span id="wind"></span> <span class="no-cap">km/h</span>
+                            Feels Like: <span class="special-color"><span id="feels"></span>˚C</span>
+                        </li>
+                        <li>
+                            Wind Speed: <span class="special-color"><span id="wind"></span> <span class="no-cap">km/h</span></span>
                         </li>
                     </ul>
                 </div>
             </div>
-                <div class="weather-forescast" id="forecast">
+            <hr>
+            <div class="weather-forescast" id="forecast">
             </div>
+            <hr>
+            <p id="happy"></p>
+                <span id="foot">
+                    <a class="foot-a" href="https://github.com/vanesaromantrujillo/vanilla-weathr-app" target="_blank"> Open-source
+                        code</a> and hosted on <a class="foot-a" href="https://weatherfly.netlify.app/">Netlify</a>. Coded by Vanesa 
+                    Roman 👩🏻‍💻
+                </span>
         </div>
-            <span id="foot">
-                <a href="https://github.com/vanesaromantrujillo/vanilla-weathr-app" target="_blank"> Open-source
-                  code</a> and hosted on <a href="https://weatherfly.netlify.app/">Netlify</a>. Coded by Vanesa Roman 👩🏻‍💻
-            </span>
     </div>
 </div>
     <script src="src/app.js"></script>
