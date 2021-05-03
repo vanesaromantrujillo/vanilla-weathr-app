@@ -25,6 +25,11 @@ a {
 hr{
   color:  #4c7aec;
 }
+footer {
+  font-size: 0.8rem;
+  color: #000000;
+  text-align: center;
+}
 #city {
   color: #0d0d0d;
   display: block;
@@ -39,10 +44,7 @@ hr{
   display: block;
   text-align: right;
 }
-#foot {
-  font-size: 0.8rem;
-  color: #000000;
-}
+
 #temperature{
   font-weight: 400;
 }
