@@ -1,7 +1,7 @@
 body {
   font-family: "Google Sans", arial, sans-serif;
-  background-color:#eff0f3;
-  color:  #0d0d0d;
+  background-color: #eff0f3;
+  color: #0d0d0d;
 }
 
 ul {
@@ -22,8 +22,8 @@ li {
 a {
   text-decoration: none;
 }
-hr{
-  color:  #4c7aec;
+hr {
+  color: #4c7aec;
 }
 footer {
   font-size: 0.8rem;
@@ -36,6 +36,7 @@ footer {
   font-size: 28px;
   font-weight: 600;
   line-height: 26px;
+  margin-top: 1%;
   margin-bottom: 1%;
 }
 #predition li {
@@ -45,10 +46,10 @@ footer {
   text-align: right;
 }
 
-#temperature{
+#temperature {
   font-weight: 400;
 }
-#happy{
+#happy {
   background-color: #4c79ec1e;
   color: #0d0d0d;
   text-align: center;
@@ -66,7 +67,7 @@ footer {
   display: inline;
 }
 .special-color {
-    color: #2a2a2ab4;
+  color: #2a2a2ab4;
 }
 
 .weather-app {
@@ -75,7 +76,7 @@ footer {
   border-radius: 10px;
   background-color: #fffffe;
   border: solid 3px #0d0d0d;
-  box-shadow: 20px 20px #0d0d0d28;;
+  box-shadow: 20px 20px #0d0d0d28;
 }
 .weather-app-rapper {
   max-width: 600px;
@@ -97,7 +98,7 @@ footer {
   line-height: 48px;
   margin-left: 0px;
   vertical-align: top;
-} 
+}
 
 .no-cap {
   text-transform: lowercase;
@@ -117,8 +118,13 @@ footer {
   font-size: 1rem;
   color: #2a2a2ab4;
 }
+.weather-forescast-img {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0;
+}
 .weather-forescast-temperature {
-  font-size: 14px;
+  font-size: 1rem;
 }
 .weather-forescast-temperature-min {
   color: #2a2a2ab4;
@@ -131,6 +137,9 @@ footer {
   background-color: #f8f9fa00;
   padding-top: 5px;
   padding-bottom: 5px;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .foot-a {
@@ -144,25 +153,27 @@ footer {
   border: none;
 }
 .search:hover {
-  background-color:#446cd1;
+  background-color: #446cd1;
 }
-.form{
+.form {
   margin-bottom: 2%;
 }
-/*body {
-  background: linear-gradient(-45deg, #a88dff, #2055e7, #f3d7c5, #17102d);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-}
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+@media (max-width: 900px) {
+  ul {
+    font-size: 0.9rem;
+    line-height: 16px;
   }
-  50% {
-    background-position: 100% 50%;
+  .weather-forescast-date {
+    font-size: 0.9rem;
   }
-  100% {
-    background-position: 0% 50%;
+  .weather-forescast-temperature {
+    font-size: 0.9rem;
+  }
+  #happy {
+    font-size: 1rem;
+  }
+  #city {
+    margin-top: 5%;
   }
 }

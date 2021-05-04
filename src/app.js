@@ -23,30 +23,23 @@ function happyDay(timestamp){
     let date = new Date(timestamp);
     let happydays = ["Sunday","Monday", "Tuesday", "Wenesday", "Thursday", "Friday", "Saturday" ];
     let dayhappy = happydays[date.getDay()];
-    if (dayhappy=="Monday"){
+    if (dayhappy==="Monday"){
         return`“Success is the sum of small efforts repeated day in and day out.” 
         <i>—Robert Collier </i>`;
-    }
-    if (dayhappy=="Tuesday"){
+    } else if (dayhappy==="Tuesday"){
         return`“Go as far as you can see; when you get there, you’ll be able to see further.” 
         <i>—Thomas Carlyle</i>`;
-    }
-    if (dayhappy=="Wenesday"){
+    } else if (dayhappy==="Wenesday"){
         return`“Don’t count the days, make the days count.” 
         <i>—Muhammad Ali</i>`;
-    }
-    if (dayhappy=="Thursday"){
+    } else if (dayhappy==="Thursday"){
         return`“Light tomorrow with today.” 
         <i>—Elizabeth Barrett Browning </i>`;
-    }
-    if (dayhappy=="Friday"){
+    } else if (dayhappy==="Friday"){
+        return`Happy ${dayhappy}, enjoy your weekend 😎`;
+    } else if (dayhappy==="Saturday"){
         return`Happy ${dayhappy}, enjoy your weekend 😎`;
     }
-    
-    if (dayhappy=="Saturday"){
-        return`Happy ${dayhappy}, enjoy your weekend 😎`;
-    }
-
     else{
         return `Enjoy your ${dayhappy} 🙂`;
     }
@@ -59,7 +52,6 @@ function dayPrediction(timestamp){
     return days[day];
 }
 function displayForecast(response){
-    console.log(response.data);
     let forecast = response.data.daily;
     let forecastElement=document.querySelector("#forecast");
 
@@ -68,7 +60,7 @@ function displayForecast(response){
     forecast.forEach(function(forecastDay, index){
         if (index < 6){
     forecastHTML=forecastHTML + `
-            <div class="col-2 forecast-col">
+            <div class="col-2 col-xs-2 forecast-col">
                 <div class="weather-forescast-date">${dayPrediction(forecastDay.dt)}</div> 
                     <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
                     alt="" 
@@ -85,6 +77,7 @@ function displayForecast(response){
     forecastHTML=forecastHTML +`</div>`;
     forecastElement.innerHTML=forecastHTML;
 }
+
 function getForecast(coordinates){
     let apiKey= "445aeda78e9f65ae9c133e75be3fe412";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -111,7 +104,7 @@ function displayTemperature(response){
     windElement.innerHTML=Math.round(response.data.wind.speed);
     feelsElement.innerHTML=Math.round(response.data.main.feels_like);
     dateElement.innerHTML=formatDate(response.data.dt * 1000);
-    happyElement.innerHTML=happyDay(response.data.dt);
+    happyElement.innerHTML=happyDay(response.data.dt*1000);
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt",response.data.weather[0].description );
     getForecast(response.data.coord);
@@ -131,25 +124,3 @@ search ("Toronto");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit",handleSubmit);
 
-
-
-
-
-
-//function displayFahrenheitTemperature(event){
-//    event.preventDefault();
-//    let fahrenheitTemperature=(celciusTemperature * 9)/5+32;
-//    let temperatureElement=document.querySelector("#temperature");
-//    //remove the active calls to the celsius link
-//    celsiusLink.classList.remove("active");
-//    fahrenheitLink.classList.add("active");
-//    temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
-//}
-//function displayCelsiusTemperature(event){
-//    event.preventDefault();
-//    let temperatureElement=document.querySelector("#temperature");
-//    //add the active link to the fahrenheit
-//    celsiusLink.classList.add("active");
-//    fahrenheitLink.classList.remove("active");
-//    temperatureElement.innerHTML=Math.round(celciusTemperature);
-//}

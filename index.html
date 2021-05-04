@@ -13,12 +13,12 @@
 </head>
 <body>
     
-<div class="container">
+<div class="container-fluid">
     <div class="weather-app-rapper">
         <div class="weather-app">
             <div class="row form">
-                <div class="col-9">
-                <form id="search-form" class="mb-3">
+                <div class="col-8">
+                <form id="search-form" class="">
                 <input 
                 type="search" 
                 placeholder="Type a city..." 
@@ -27,8 +27,8 @@
                 autocomplete="off"
                 />
                 </div>
-                <div class="col-3">
-                <input type="submit" value="Search" class="btn btn-primary w-100 search">
+                <div class="col-4">
+                <input type="submit" id="searchtext" value="Search" class="btn btn-primary w-100 search">
                 </div>
                 </form>  
             </div>
@@ -52,7 +52,6 @@
                             id="icon"
                             class="float-left weather-units">
                             <strong id="temperature"></strong><span class="units">°C</span>
-                            
                     </div>
                 </div>
                 <div id="predition" class="col-6">
