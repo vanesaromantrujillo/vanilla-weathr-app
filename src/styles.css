@@ -175,4 +175,13 @@ footer {
   #city {
     margin-top: 5%;
   }
+  .weather-app {
+    margin-top: 5%;
+    border: solid 3px #0d0d0d;
+  }
+  .weather-app strong {
+    font-size: 28px;
+    line-height: 28px;
+    vertical-align: top;
+  }
 }
