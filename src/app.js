@@ -124,3 +124,20 @@ search ("Toronto");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit",handleSubmit);
 
+//function displayFahrenheitTemperature(event){
+//    event.preventDefault();
+//    let fahrenheitTemperature=(celciusTemperature * 9)/5+32;
+//    let temperatureElement=document.querySelector("#temperature");
+//    //remove the active calls to the celsius link
+//    celsiusLink.classList.remove("active");
+//    fahrenheitLink.classList.add("active");
+//    temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
+//}
+//function displayCelsiusTemperature(event){
+//    event.preventDefault();
+//    let temperatureElement=document.querySelector("#temperature");
+//    //add the active link to the fahrenheit
+//    celsiusLink.classList.add("active");
+//    fahrenheitLink.classList.remove("active");
+//    temperatureElement.innerHTML=Math.round(celciusTemperature);
+//}
