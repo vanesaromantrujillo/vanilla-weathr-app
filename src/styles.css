@@ -176,17 +176,17 @@ footer {
     margin-top: 5%;
   }
   .weather-app {
-    margin-top: 10%;
+    margin-top: 15%;
     border: solid 3px #0d0d0d;
     box-shadow: none;
   }
   .weather-app strong {
     font-size: 35px;
-    line-height: 32px;
+    line-height: 37px;
   }
 
   .weather-units {
-    margin-top: 0px;
+    margin-top: -15px;
     margin-right: 0px;
     height: 70px;
     width: 70px;
