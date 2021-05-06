@@ -181,13 +181,12 @@ footer {
     box-shadow: none;
   }
   .weather-app strong {
-    font-size: 32px;
+    font-size: 35px;
     line-height: 32px;
   }
-  .units {
-    font-size: 20px;
-  }
+
   .weather-units {
+    margin-top: 0px;
     margin-right: 0px;
     height: 70px;
     width: 70px;
