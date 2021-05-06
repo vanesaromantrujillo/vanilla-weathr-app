@@ -33,8 +33,8 @@ function happyDay(timestamp){
         return`“Don’t count the days, make the days count.” 
         <i>—Muhammad Ali</i>`;
     } else if (dayhappy==="Thursday"){
-        return`“Light tomorrow with today.” 
-        <i>—Elizabeth Barrett Browning </i>`;
+        return`“The best preparation for tomorrow is doing your best today.” 
+        <i>—H. Jackson Brown</i>`;
     } else if (dayhappy==="Friday"){
         return`Happy ${dayhappy}, enjoy your weekend 😎`;
     } else if (dayhappy==="Saturday"){
