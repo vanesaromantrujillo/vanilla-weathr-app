@@ -18,6 +18,46 @@ function formatDate(timestamp){
     let month=months[date.getMonth()];
     let dateM=date.getDate();
     return `${day}, ${month} ${dateM}, ${hours}:${minutes}${ampm}`;
+
+
+// Icon
+
+function getIcon(icon) {
+  let iconElement = "";
+  if (icon === "03d" || icon === "03n") {
+    iconElement = "src/icons/cloudygif.png";
+  } else if (icon === "04d") {
+    iconElement = "src/icons/04d.png";
+  } else if (icon === "04n") {
+    iconElement = "src/icons/04n.png";
+  } else if (icon === "01d") {
+    iconElement = "src/icons/01d.png";
+  } else if (icon === "01d") {
+    iconElement = "src/icons/01d.png";
+  } else if (icon === "02d") {
+    iconElement = "src/icons/02d.png";
+  } else if (icon === "02n") {
+    iconElement = "src/icons/02n.png";
+  } else if (icon === "09d") {
+    iconElement = "src/icons/09d.png";
+  } else if (icon === "09n") {
+    iconElement = "src/icons/09n.png";
+  } else if (icon === "10d") {
+    iconElement = "src/icons/10d.png";
+  } else if (icon === "10n") {
+    iconElement = "src/icons/10n.png";
+  } else if (icon === "13d") {
+    iconElement = "src/icons/13d.png";
+  } else if (icon === "13n") {
+    iconElement = "src/icons/13n.png";
+  } else if (icon === "50d") {
+    iconElement = "src/icons/50d.png";
+  } else if (icon === "50n") {
+    iconElement = "src/icons/50n.png";
+  }
+  return iconElement;
+}
+
 }
 function happyDay(timestamp){
     let date = new Date(timestamp);
