@@ -25,16 +25,16 @@ function happyDay(timestamp){
     let dayhappy = happydays[date.getDay()];
     if (dayhappy==="Monday"){
         return`“Success is the sum of small efforts repeated day in and day out.” 
-        <i>—Robert Collier </i>`;
+        <br><i>—Robert Collier </i>`;
     } else if (dayhappy==="Tuesday"){
         return`“Go as far as you can see; when you get there, you’ll be able to see further.” 
-        <i>—Thomas Carlyle</i>`;
+        <br><i>—Thomas Carlyle</i>`;
     } else if (dayhappy==="Wenesday"){
         return`“Don’t count the days, make the days count.” 
         <i>—Muhammad Ali</i>`;
     } else if (dayhappy==="Thursday"){
         return`“The best preparation for tomorrow is doing your best today.” 
-        <i>—H. Jackson Brown</i>`;
+        <br><i>—H. Jackson Brown</i>`;
     } else if (dayhappy==="Friday"){
         return`Happy ${dayhappy}, enjoy your weekend 😎`;
     } else if (dayhappy==="Saturday"){
