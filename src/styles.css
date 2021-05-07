@@ -30,13 +30,14 @@ footer {
   color: #181818;
   text-align: center;
 }
+
 #city {
   color: #181818;
   display: block;
   font-size: 28px;
   font-weight: 400;
   line-height: 26px;
-  margin-top: 3%;
+  margin-top: 5%;
   margin-bottom: 1%;
 }
 #predition li {
@@ -88,7 +89,7 @@ footer {
   margin-top: -29px;
 }
 .overview {
-  margin-bottom: 20px;
+  margin-bottom: 5%;
 }
 .weather-app strong {
   font-size: 48px;
@@ -159,13 +160,15 @@ footer {
   background-color: #4fc4cf00;
   color: #4c7aec;
   vertical-align: top;
+  text-align: center;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 #geolocation:hover {
   background-color: #dae3fa;
 }
-.form {
-  margin-bottom: 2%;
-  color: #4c7aec;
+.form-control {
 }
 
 @media (max-width: 900px) {
@@ -201,5 +204,10 @@ footer {
     height: 70px;
     width: 70px;
     vertical-align: top;
+  }
+  .form-control,
+  .search,
+  #geolocation {
+    font-size: 0.6rem;
   }
 }
