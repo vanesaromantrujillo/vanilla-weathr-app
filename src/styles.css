@@ -1,7 +1,7 @@
 body {
   font-family: "Google Sans", arial, sans-serif;
-  background-color: #eff0f3;
-  color: #0d0d0d;
+  background-color: rgb(253 224 110);
+  color: #181818;
 }
 
 ul {
@@ -27,11 +27,11 @@ hr {
 }
 footer {
   font-size: 0.8rem;
-  color: #000000;
+  color: #181818;
   text-align: center;
 }
 #city {
-  color: #0d0d0d;
+  color: #181818;
   display: block;
   font-size: 28px;
   font-weight: 400;
@@ -50,8 +50,8 @@ footer {
   font-weight: 400;
 }
 #happy {
-  background-color: #4c79ec1e;
-  color: #0d0d0d;
+  background-color: #e6f8f8;
+  color: #181818;
   text-align: center;
   padding: 5% 10%;
   font-size: 1.1rem;
@@ -60,7 +60,7 @@ footer {
   margin-bottom: 5%;
 }
 .units {
-  color: #202124;
+  color: #181818;
   line-height: 30px;
   font-size: 26px;
   display: inline;
@@ -74,7 +74,7 @@ footer {
   padding: 5%;
   border-radius: 10px;
   background-color: #fffffe;
-  border: solid 3px #0d0d0d;
+  border: solid 4px #181818;
   box-shadow: 20px 20px #0d0d0d28;
 }
 .weather-app-rapper {
@@ -82,11 +82,10 @@ footer {
   margin: 30px auto;
 }
 .weather-units {
-  margin-right: 3px;
-  height: 70px;
-  width: 70px;
+  height: 100px;
+  width: 100px;
   vertical-align: top;
-  margin-top: -10px;
+  margin-top: -29px;
 }
 .overview {
   margin-bottom: 20px;
@@ -104,7 +103,7 @@ footer {
 }
 
 .units .active {
-  color: #0d0d0d;
+  color: #181818;
   cursor: default;
 }
 .units .active:hover {
@@ -129,7 +128,7 @@ footer {
   color: #2a2a2ab4;
 }
 .weather-forescast-temperature-max {
-  color: #0d0d0d;
+  color: #181818;
   font-weight: 600;
 }
 .forecast-col {
@@ -147,15 +146,26 @@ footer {
 .foot-a:hover {
   color: #4c7aec;
 }
-.search {
+#searchtext {
   background-color: #4c7aec;
-  border: none;
+  border: 1px solid #4c7aec;
+  color: #fffefe;
 }
-.search:hover {
-  background-color: #446cd1;
+#searchtext:hover {
+  background-color: #3f67cc;
+}
+#geolocation {
+  border: 1px solid #4c7aec;
+  background-color: #4fc4cf00;
+  color: #4c7aec;
+  vertical-align: top;
+}
+#geolocation:hover {
+  background-color: #dae3fa;
 }
 .form {
   margin-bottom: 2%;
+  color: #4c7aec;
 }
 
 @media (max-width: 900px) {
@@ -177,7 +187,7 @@ footer {
   }
   .weather-app {
     margin-top: 10%;
-    border: solid 3px #0d0d0d;
+    border: solid 3px #181818;
     box-shadow: none;
   }
   .weather-app strong {

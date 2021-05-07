@@ -18,22 +18,19 @@ function formatDate(timestamp){
     let month=months[date.getMonth()];
     let dateM=date.getDate();
     return `${day}, ${month} ${dateM}, ${hours}:${minutes}${ampm}`;
-
-
-// Icon
-
+}
 function getIcon(icon) {
   let iconElement = "";
   if (icon === "03d" || icon === "03n") {
-    iconElement = "src/icons/cloudygif.png";
+    iconElement = "src/icons/03d.png";
   } else if (icon === "04d") {
     iconElement = "src/icons/04d.png";
   } else if (icon === "04n") {
     iconElement = "src/icons/04n.png";
   } else if (icon === "01d") {
     iconElement = "src/icons/01d.png";
-  } else if (icon === "01d") {
-    iconElement = "src/icons/01d.png";
+  } else if (icon === "01n") {
+    iconElement = "src/icons/01n.png";
   } else if (icon === "02d") {
     iconElement = "src/icons/02d.png";
   } else if (icon === "02n") {
@@ -56,8 +53,6 @@ function getIcon(icon) {
     iconElement = "src/icons/50n.png";
   }
   return iconElement;
-}
-
 }
 function happyDay(timestamp){
     let date = new Date(timestamp);
@@ -102,7 +97,8 @@ function displayForecast(response){
     forecastHTML=forecastHTML + `
             <div class="col-2 col-xs-2 forecast-col">
                 <div class="weather-forescast-date">${dayPrediction(forecastDay.dt)}</div> 
-                    <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+                    <img 
+                    src="${getIcon(forecastDay.weather[0].icon)}"
                     alt="" 
                     id=""
                     class="weather-forescast-img"
@@ -145,7 +141,7 @@ function displayTemperature(response){
     feelsElement.innerHTML=Math.round(response.data.main.feels_like);
     dateElement.innerHTML=formatDate(response.data.dt * 1000);
     happyElement.innerHTML=happyDay(response.data.dt*1000);
-    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("src", getIcon(response.data.weather[0].icon));
     iconElement.setAttribute("alt",response.data.weather[0].description );
     getForecast(response.data.coord);
 }
@@ -159,6 +155,24 @@ function handleSubmit(event){
     let cityInputElement=document.querySelector("#city-input");
     search(cityInputElement.value);
 }
+// Geolocation
+
+function showPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "445aeda78e9f65ae9c133e75be3fe412";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function getPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let geolocationButton = document.querySelector("#geolocation");
+geolocationButton.addEventListener("click", getPosition);
+
 search ("Toronto");
 
 let form = document.querySelector("#search-form");
@@ -181,3 +195,5 @@ form.addEventListener("submit",handleSubmit);
 //    fahrenheitLink.classList.remove("active");
 //    temperatureElement.innerHTML=Math.round(celciusTemperature);
 //}
+// Icon
+
